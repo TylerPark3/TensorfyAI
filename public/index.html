@@ -1471,7 +1471,7 @@ to{stroke-dashoffset:-4}}
   position:relative;margin:clamp(60px,9vw,130px) 0 clamp(40px,6vw,86px);
   display:grid;place-items:center;
 }
-.artifact.mark .art-svg{width:min(44vw,470px);height:auto;opacity:.80}
+
 .artifact.mark .artifact-meta{
   margin-top:22px;display:flex;gap:clamp(18px,4vw,64px);flex-wrap:wrap;justify-content:center;
   font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey-2);
@@ -1500,6 +1500,21 @@ to{stroke-dashoffset:-4}}
 .tablewrap::-webkit-scrollbar{height:3px}
 .tablewrap::-webkit-scrollbar-thumb{background:rgba(237,234,228,.16)}
 .tablewrap::-webkit-scrollbar-track{background:transparent}
+
+/* ── tensor plate: the plotted original, inverted onto black ──────────── */
+.artifact.mark{display:flex;flex-direction:column;align-items:center;
+  margin:clamp(56px,8vw,112px) 0 clamp(34px,5vw,72px)}
+.artifact.mark .artifact-meta{position:static;order:-1;margin:0 0 22px;
+  display:flex;gap:clamp(16px,4vw,54px);flex-wrap:wrap;justify-content:center;
+  font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--grey-2)}
+.artifact.mark .artifact-meta b{font-weight:400;color:var(--bone-dim)}
+.tensor-plate{
+  display:block;width:min(34vw,340px);height:auto;
+  /* dark ink on light paper → invert, then screen drops the paper out */
+  filter:invert(1) grayscale(1) contrast(1.3) brightness(.86);
+  mix-blend-mode:screen;opacity:.72;
+}
+@media(max-width:700px){.tensor-plate{width:62vw}}
 </style>
 </head>
 
@@ -1864,7 +1879,7 @@ to{stroke-dashoffset:-4}}
 
 <!-- ══════════════ PLATE — TENSOR ══════════════ -->
 <figure class="artifact mark rv" aria-label="Plotted nested tensor lattice">
-  <svg class="art-svg tl" viewBox="0 0 900 900" aria-hidden="true"><defs><pattern id="h0" width="7.0" height="8" patternUnits="userSpaceOnUse"><line x1=".5" y1="0" x2=".5" y2="8" style="--o:0.24"/></pattern><pattern id="h1" width="5.2" height="8" patternUnits="userSpaceOnUse"><line x1=".5" y1="0" x2=".5" y2="8" style="--o:0.34"/></pattern><pattern id="h2" width="3.8" height="8" patternUnits="userSpaceOnUse"><line x1=".5" y1="0" x2=".5" y2="8" style="--o:0.46"/></pattern><pattern id="h3" width="2.9" height="8" patternUnits="userSpaceOnUse"><line x1=".5" y1="0" x2=".5" y2="8" style="--o:0.60"/></pattern></defs><g transform="translate(450 450) rotate(-17)"><rect x="-360" y="-360" width="720" height="720" fill="url(#h0)"/><rect x="-360" y="-375" width="720" height="15" fill="url(#h0)" opacity=".8"/><rect x="-360" y="360" width="720" height="15" fill="url(#h0)" opacity=".8"/><rect x="-286" y="-286" width="572" height="572" fill="url(#h1)"/><rect x="-286" y="-301" width="572" height="15" fill="url(#h1)" opacity=".8"/><rect x="-286" y="286" width="572" height="15" fill="url(#h1)" opacity=".8"/><rect x="-212" y="-212" width="424" height="424" fill="url(#h2)"/><rect x="-212" y="-227" width="424" height="15" fill="url(#h2)" opacity=".8"/><rect x="-212" y="212" width="424" height="15" fill="url(#h2)" opacity=".8"/><rect x="-150" y="-150" width="300" height="300" fill="url(#h3)"/><rect x="-150" y="-165" width="300" height="15" fill="url(#h3)" opacity=".8"/><rect x="-150" y="150" width="300" height="15" fill="url(#h3)" opacity=".8"/><rect class="core" x="-96" y="-128" width="192" height="256"/></g></svg>
+  <img class="tensor-plate" src="assets/tensor.jpg" width="760" height="712" loading="lazy" alt="Plotter-drawn nested lattice: a dense tensor block resolving to a solid core">
   <figcaption class="artifact-meta">
     <span><b>Tensor</b> &nbsp;·&nbsp; nested lattice, plotted</span>
     <span>Rank 3 &nbsp; / &nbsp; dimensions withheld</span>
