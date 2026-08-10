@@ -907,6 +907,7 @@ input,button,select,textarea{font:inherit;color:inherit}
 .ppl-lede{font-size:var(--body);line-height:1.9;color:var(--grey);columns:2;column-gap:clamp(30px,4vw,64px);
   margin-bottom:clamp(30px,3.6vw,48px);border-left:var(--rule) solid var(--line);padding-left:18px}
 .ppl-lede em{font-style:normal;color:var(--bone-dim)}
+.ppl-lede.third{margin-top:10px}
 .ppl-lede.second{margin-top:-18px}
 .funnel{margin:clamp(30px,4vw,48px) 0 clamp(34px,4vw,52px)}
 .chart.fnl{max-width:900px}
@@ -1504,7 +1505,10 @@ to{stroke-dashoffset:-4}}
 /* ── tensor plate: the plotted original, inverted onto black ──────────── */
 .artifact.mark{
   display:grid;place-items:center;
-  margin:clamp(80px,11.5vw,160px) 0 clamp(104px,15vw,210px);
+  /* the section above contributes ~205px of its own trailing space before this
+     plate begins, so a positive margin here reads as a huge gap. Pull back so the
+     gap a reader actually sees matches the one below. */
+  margin:max(-130px,-10.5vw) 0 clamp(104px,15vw,210px);
   border:0;                 /* the rules above and below came from .artifact */
   background:none;          /* and the lighter band from its fill           */
   overflow:visible;
@@ -1522,6 +1526,24 @@ to{stroke-dashoffset:-4}}
 .chart .qhi{fill:rgba(228,82,59,.05);stroke:none}
 .chart .qlb{fill:rgba(228,82,59,.72);font-size:8.5px;letter-spacing:.2em;font-family:var(--mono)}
 .chart .qlb.dim{fill:var(--grey-2)}
+
+/* ── fig 00b: elements added without styling — rects defaulted to black fill
+      and points to black-on-black, which is why the panels read as empty ── */
+.opg .pn{fill:rgba(237,234,228,.025);stroke:rgba(237,234,228,.13);stroke-width:1}
+.opg .dp{stroke:none}
+.opg .dp.a{fill:var(--bone-dim)}
+.opg .dp.b{fill:var(--signal)}
+.opg .split{stroke:rgba(237,234,228,.55);stroke-width:1;stroke-dasharray:3 3;fill:none}
+.opg .stair{stroke:rgba(237,234,228,.55);stroke-width:1.2;stroke-dasharray:none;fill:none}
+.opg .cliff{stroke:rgba(237,234,228,.10);stroke-width:1}
+.opg .gr{stroke:rgba(237,234,228,.09);stroke-width:1}
+.opg .cal{stroke:rgba(237,234,228,.18);stroke-width:1}
+.opg .gap{fill:rgba(228,82,59,.10);stroke:none}
+.opg .gap-l{fill:var(--signal)}
+.opg .mk{stroke:none}
+.opg .mk.tr-m{fill:var(--bone-dim)}
+.opg .mk.nn-m{fill:var(--signal)}
+.opg .res{fill:rgba(228,82,59,.55);stroke:none}
 </style>
 </head>
 
@@ -2857,13 +2879,13 @@ to{stroke-dashoffset:-4}}
       <div class="prog-head">
         <span class="prog-tag">Program</span>
         <h4><span class="redact" data-glyph="█████" data-alt="Sealed">█████</span></h4>
-        <span class="prog-sub"><span class="redact" data-glyph="███████ ███████ ██████-███████ ██████" data-alt="Withdrawn from disclosure">███████ ███████ ██████-███████ ██████</span></span>
+        <span class="prog-sub">Drone defense &mdash; neural-network visual detection</span>
         <span class="prog-st"><i>Sealed</i></span>
       </div>
 
       <div class="seal">
         <div class="seal-hd">
-          <span>Disclosure withdrawn</span>
+          <span>Domain only</span>
           <span class="seal-rev">Superseded &nbsp;·&nbsp; Rev. <span class="redact" data-glyph="██.██.██" data-alt="Withheld">██.██.██</span></span>
         </div>
         <div class="seal-field" role="img" aria-label="Program description redacted in full">
@@ -2877,10 +2899,10 @@ to{stroke-dashoffset:-4}}
           <div class="seal-row"><i class="seal-b" style="width:142px"></i><i class="seal-b" style="width:84px"></i><i class="seal-b" style="width:210px"></i></div>
         </div>
         <div class="seal-ft">
-          <div><b>Domain</b><span class="redact" data-glyph="████████" data-alt="Tier 0">████████</span></div>
+          <div><b>Domain</b><span>Counter-UAS</span></div>
           <div><b>Counterparty</b><span class="redact" data-glyph="██████████" data-alt="Tier 0">██████████</span></div>
           <div><b>Stage</b><span class="redact" data-glyph="███████" data-alt="Tier 0">███████</span></div>
-          <div><b>Disclosure</b><span>None at any tier</span></div>
+          <div><b>Disclosure</b><span>Tier III only</span></div>
         </div>
       </div>
 
@@ -3103,15 +3125,15 @@ to{stroke-dashoffset:-4}}
             <tr>
               <th></th>
               <th>WOE Scorecard<span>the incumbent</span></th>
-              <th>Frontier API<span>ChatGPT · Claude</span></th>
-              <th class="us">Tensorfy<span>on the counterparty&rsquo;s metal</span></th>
+              <th>Frontier API<span>general-purpose language</span></th>
+              <th class="us">Tensorfy<span>numerical research &middot; in development</span></th>
             </tr>
           </thead>
-          <tbody><tr><td class="dim">Bounded numeric fields<br><i>salary · debt level</i></td><td class="no">Binned to ~10 buckets. Ordering discarded.</td><td class="no">Tokenized as digits. No ordinal geometry.</td><td class="us yes">Span embeddings over bounded ranges. <span class="redact" data-glyph="██████" data-alt="Withheld">██████</span></td></tr><tr><td class="dim">Data residency</td><td class="yes">On-premise. Compliant.</td><td class="no">PII must leave the estate. Blocked by policy.</td><td class="us yes">Runs inside the counterparty’s estate.</td></tr><tr><td class="dim">Adverse-action explainability</td><td class="yes">Native. Required by regulation.</td><td class="no">None. Cannot be attributed.</td><td class="us yes"><span class="redact" data-glyph="██████████████" data-alt="Withheld">██████████████</span></td></tr><tr><td class="dim">Assimilation &amp; Q&amp;A<br><i>at the function level</i></td><td class="no">Not possible.</td><td class="no">Generic. No knowledge of the function.</td><td class="us yes">Attention over <span class="redact" data-glyph="████████" data-alt="Withheld">████████</span>, scoped to one enterprise function.</td></tr><tr><td class="dim">Cost per decision</td><td class="yes">Negligible.</td><td class="no">Metered per token, forever.</td><td class="us yes">Fixed. On silicon we designed.</td></tr><tr><td class="dim">Vendor dependency</td><td class="yes">None.</td><td class="no">Total. Repriced or deprecated at will.</td><td class="us yes">None.</td></tr></tbody>
+          <tbody><tr><td class="dim">Bounded numeric fields<br><i>salary · debt level</i></td><td class="no">Binned to ~10 buckets. Ordering discarded.</td><td class="no">Tokenized as digits. No ordinal geometry.</td><td class="us yes">Span embeddings over bounded ranges. <span class="redact" data-glyph="██████" data-alt="Withheld">██████</span></td></tr><tr><td class="dim">Data residency</td><td class="yes">On-premise. Compliant.</td><td class="no">PII must leave the estate. Blocked by policy.</td><td class="us yes">Designed to run inside the counterparty’s estate.</td></tr><tr><td class="dim">Cost per decision</td><td class="yes">Negligible.</td><td class="no">Metered per token, forever.</td><td class="us yes">Fixed, not metered.</td></tr><tr><td class="dim">Vendor dependency</td><td class="yes">None.</td><td class="no">Total. Repriced or deprecated at will.</td><td class="us yes">None.</td></tr></tbody>
         </table>
       </div>
 
-      <p class="cmp-foot">Scorecards bin bounded fields. Tokenizers see digits. <em>We retain range and context.</em></p>
+      <p class="cmp-foot">Scorecards bin bounded fields. Tokenizers see digits. <em>Our research is on representations that keep both.</em></p>
     </figure>
 
     <p class="res-foot rv">Public notebooks report 0.95&ndash;0.99. <em>That is leakage.</em></p>
@@ -3309,6 +3331,10 @@ to{stroke-dashoffset:-4}}
 
     <p class="ppl-lede rv second">$30M ARR on revenue, under real manufacturing constraints.
       <em>First-principles technology, not a rented API.</em></p>
+
+    <p class="ppl-lede rv third">Most who claim AI expertise have called an API. We know the
+      language stack from the bottom up &mdash; architecture, training, and the silicon beneath it.
+      <em>We chose not to build there.</em></p>
 
 
     <figure class="fig funnel rv">
