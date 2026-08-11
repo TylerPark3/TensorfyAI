@@ -10,6 +10,14 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23050506'/%3E%3Cg stroke='%23EDEAE4' stroke-width='1.6' fill='none'%3E%3Cpath d='M11 7 H7 V25 H11'/%3E%3Cpath d='M21 7 H25 V25 H21'/%3E%3C/g%3E%3Cg fill='%23EDEAE4'%3E%3Ccircle cx='16' cy='11' r='1.5'/%3E%3Ccircle cx='16' cy='16' r='1.5' opacity='.35'/%3E%3Ccircle cx='16' cy='21' r='1.5' opacity='.35'/%3E%3C/g%3E%3C/svg%3E">
 
 <style>
+/* ── Libertinus Serif, self-hosted and subset. No third-party request. ── */
+@font-face{font-family:"Libertinus Serif";src:url("assets/font/LibertinusSerif-Regular.woff2") format("woff2");
+  font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Libertinus Serif";src:url("assets/font/LibertinusSerif-Italic.woff2") format("woff2");
+  font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"Libertinus Serif";src:url("assets/font/LibertinusSerif-SemiBold.woff2") format("woff2");
+  font-weight:600;font-style:normal;font-display:swap}
+
 /* ============================================================
    TENSORFY — stealth disclosure page
    Single file. No network dependencies. Runs from file://
@@ -32,6 +40,7 @@
   /* one family, everywhere. --sans is kept as an alias so every rule resolves to mono. */
   --mono:ui-monospace,"SF Mono",SFMono-Regular,"JetBrains Mono",Menlo,Consolas,monospace;
   --sans:var(--mono);
+  --serif:"Libertinus Serif",Georgia,"Times New Roman",serif;
 
   /* one prose size for every piece of running text on the page.
      mono sets wider than a proportional face, so this runs smaller and looser. */
@@ -1619,6 +1628,31 @@ section{padding:clamp(44px,6vw,84px) 0}
   .vs-h,.vs-r{grid-template-columns:1fr 1fr;gap:8px 16px}
   .vs-h span,.vs-r span{grid-column:1/-1;margin-bottom:2px}
 }
+
+/* ── serif for reading, mono for data ─────────────────────────────────
+   The mono is what made this feel like a terminal. Prose and headlines move
+   to the serif; every label, figure, number and redaction stays mono. ── */
+body{font-family:var(--serif)}
+p, blockquote, li, .card .big, .card .one, h1, h2, h3, h4, h5,
+.acc .mailto, .kit input, .kit button{font-family:var(--serif)}
+.card .big{letter-spacing:-.005em;line-height:1.18}
+.card .one{line-height:1.62;font-size:calc(var(--body) + 1.5px)}
+/* everything that measures, counts, labels or redacts stays monospaced */
+.idx,.ttl,.meta,.sec-head,.hud,.hud-nav,.status,.snd,.mod4 span,.mod4 i,.mod4 .tag,
+.progrows,.progrows *,.vs-h,.vs-h *,.vs-r span,.plist span,.accrow b,.accrow span,
+.fp-list,.fp-cap,.kit-note,.redact,.foot-bar,.foot-bar *,.hero-eyebrow,.geo,.geo *,
+.fig-h,.fig-n,.cite,text,tspan{font-family:var(--mono)}
+.mod4 b,.plist b{font-family:var(--serif)}
+.card .huge{font-family:var(--serif);font-weight:600;letter-spacing:-.02em}
+
+/* the identity is the loudest thing on the page */
+#hero .hero-h{font-family:var(--serif);font-weight:400;
+  font-size:clamp(38px,7.4vw,104px);line-height:1.02;letter-spacing:-.022em;
+  color:var(--bone);margin:clamp(18px,2.4vw,30px) 0 0;max-width:15ch}
+#hero .hero-h .ln{display:block;overflow:hidden}
+#hero .hero-h .ln > i{font-style:normal;display:block}
+#hero .hero-sub{font-family:var(--mono);margin:clamp(16px,2vw,26px) 0 0;
+  font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--grey)}
 </style>
 </head>
 
@@ -1662,8 +1696,8 @@ section{padding:clamp(44px,6vw,84px) 0}
 
   <div class="wrap">
     <div class="hero-eyebrow rv">
-      <span>Numerical AI Frontier Lab</span>
       <span>Disclosure Tier&nbsp;0</span>
+      <span>Stealth</span>
     </div>
 
     <div class="geo rv">
@@ -1679,8 +1713,10 @@ section{padding:clamp(44px,6vw,84px) 0}
     </div>
 
     <h1 class="hero-h" id="heroH">
-      <span class="ln"><i>Tensorfy</i></span>
+      <span class="ln"><i>Numerical AI</i></span>
+      <span class="ln"><i>Frontier Lab</i></span>
     </h1>
+    <p class="hero-sub rv">Tensorfy</p>
 
     <div class="scroll-cue rv"><span class="bar"></span><span>Continue</span></div>
   </div>
