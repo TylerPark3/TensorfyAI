@@ -34,8 +34,8 @@
   --grey-2:#98948A;
   --line:rgba(25,26,30,.14);
   --line-2:rgba(25,26,30,.07);
-  --ice:#44506A;          /* deep slate replaces the pale ice */
-  --signal:#C7452D;       /* red, slightly deepened for a light ground */
+  --ice:#5A5F6B;
+  --signal:#1E3A5F;       /* navy — accent, brackets, selected states */
 
   /* one family, everywhere. --sans is kept as an alias so every rule resolves to mono. */
   --mono:ui-monospace,"SF Mono",SFMono-Regular,"JetBrains Mono",Menlo,Consolas,monospace;
@@ -238,11 +238,11 @@ nav.hud-nav a:hover::after{transform:scaleX(1);transform-origin:left}
 }
 /* recording light: hard on/off blink with a halo on the "on" beat */
 @keyframes recBlink{
-  0%,55%   {opacity:1;   box-shadow:0 0 7px 1px rgba(199,69,45,.75)}
-  56%,100% {opacity:.16; box-shadow:0 0 0 0 rgba(199,69,45,0)}
+  0%,55%   {opacity:1;   box-shadow:0 0 7px 1px rgba(30,58,95,.75)}
+  56%,100% {opacity:.16; box-shadow:0 0 0 0 rgba(30,58,95,0)}
 }
 @media (prefers-reduced-motion:reduce){
-  .status .dot{animation:none;opacity:1;box-shadow:0 0 7px 1px rgba(199,69,45,.6)}
+  .status .dot{animation:none;opacity:1;box-shadow:0 0 7px 1px rgba(30,58,95,.6)}
 }
 .hud .k{color:var(--grey-2)}
 .hud .v{color:var(--bone-dim)}
@@ -457,7 +457,7 @@ h1.hero-h .thin{color:var(--grey);font-weight:400}
 .lscape .cn{fill:var(--grey);font-size:9.5px;letter-spacing:.17em;font-family:var(--mono)}
 .lscape .cs{fill:var(--grey-2);font-size:8px;letter-spacing:.15em;font-family:var(--mono)}
 .lscape .us .pt{fill:var(--signal)}
-.lscape .us .halo{fill:none;stroke:rgba(199,69,45,.38);stroke-width:1.4}
+.lscape .us .halo{fill:none;stroke:rgba(30,58,95,.38);stroke-width:1.4}
 .lscape .us path{fill:none;stroke:var(--signal);stroke-width:1.8}
 .lscape .us text{fill:var(--signal);font-size:11px;letter-spacing:.22em;font-family:var(--mono)}
 .lscape .us .sub{fill:var(--grey-2);font-size:8px;letter-spacing:.16em}
@@ -501,7 +501,7 @@ h1.hero-h .thin{color:var(--grey);font-weight:400}
 .pos p.k{font-size:var(--stmt);letter-spacing:.1em}
 .hwa{border:var(--rule) solid var(--line);padding:22px 24px 24px}
 .hwa-tag{display:inline-block;font-size:var(--label);letter-spacing:.2em;text-transform:uppercase;
-  color:var(--signal);border:var(--rule) solid rgba(199,69,45,.32);padding:4px 9px;margin-bottom:16px}
+  color:var(--signal);border:var(--rule) solid rgba(30,58,95,.32);padding:4px 9px;margin-bottom:16px}
 .hwa p{font-size:var(--stmt);line-height:2.05;color:var(--grey);max-width:none}
 .hwa p + p{margin-top:11px}
 .hwa em{font-style:normal;color:var(--bone-dim)}
@@ -521,7 +521,7 @@ h1.hero-h .thin{color:var(--grey);font-weight:400}
 .moat{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;margin-bottom:clamp(40px,5vw,64px);
   border-top:var(--rule) solid var(--line);border-left:var(--rule) solid var(--line)}
 .moat div{border-right:var(--rule) solid var(--line);border-bottom:var(--rule) solid var(--line);padding:24px 26px 28px}
-.moat div.ours{background:rgba(199,69,45,.06)}
+.moat div.ours{background:rgba(30,58,95,.06)}
 .moat b{display:block;font-size:var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--bone-dim);margin-bottom:14px}
 .moat div.ours b{color:var(--signal)}
 .moat span{font-size:var(--stmt);line-height:1.85;color:var(--grey)}
@@ -534,7 +534,7 @@ h1.hero-h .thin{color:var(--grey);font-weight:400}
 .nn .cube .ce line{stroke:rgba(68,80,106,.24)}
 .nn .cube .cn circle{fill:rgba(25,26,30,.7);animation:cpulse 3.6s ease-out infinite;animation-delay:var(--k)}
 @keyframes cpulse{0%,70%,100%{fill:rgba(25,26,30,.45)}8%{fill:rgba(68,80,106,1)}}
-.nn .feed .fd{fill:none;stroke:rgba(199,69,45,.34);stroke-dasharray:5 7;
+.nn .feed .fd{fill:none;stroke:rgba(30,58,95,.34);stroke-dasharray:5 7;
   animation:feedRun 3.6s linear infinite;animation-delay:var(--d)}
 @keyframes feedRun{to{stroke-dashoffset:-48}}
 .nn .fl{fill:var(--grey);font-size:11px;letter-spacing:.12em;font-family:var(--mono)}
@@ -547,12 +547,12 @@ h1.hero-h .thin{color:var(--grey);font-weight:400}
 .nn .ed .e5{animation:flow 3.6s linear infinite;animation-delay:1.45s}
 @keyframes flow{0%,100%{opacity:.55}22%{opacity:1}}
 .nn .nd .n{fill:rgba(245,243,238,.95);stroke:rgba(25,26,30,.55);stroke-width:1.2}
-.nn .nd .out{stroke:var(--signal);fill:rgba(199,69,45,.14)}
+.nn .nd .out{stroke:var(--signal);fill:rgba(30,58,95,.14)}
 .nn .l0 .n{animation:fire 3.6s ease-out infinite;animation-delay:var(--i)}
 .nn .l1 .n{animation:fire 3.6s ease-out infinite;animation-delay:calc(var(--i) + .4s)}
 .nn .l2 .n{animation:fire 3.6s ease-out infinite;animation-delay:calc(var(--i) + .8s)}
 @keyframes fire{0%,88%,100%{fill:rgba(245,243,238,.95)}6%{fill:rgba(68,80,106,.85)}30%{fill:rgba(245,243,238,.95)}}
-@keyframes fireOut{0%,88%,100%{fill:rgba(199,69,45,.14)}8%{fill:var(--signal)}34%{fill:rgba(199,69,45,.14)}}
+@keyframes fireOut{0%,88%,100%{fill:rgba(30,58,95,.14)}8%{fill:var(--signal)}34%{fill:rgba(30,58,95,.14)}}
 .nn .lyl text{fill:var(--grey);font-size:12px;letter-spacing:.16em;font-family:var(--mono)}
 
 .nn .oul text{fill:var(--signal);font-size:12px;letter-spacing:.14em;font-family:var(--mono)}
@@ -574,9 +574,9 @@ h1.hero-h .thin{color:var(--grey);font-weight:400}
 .nn .lpl .lv{fill:var(--grey);font-size:9px;letter-spacing:.14em;font-family:var(--mono)}
 .nn .lpl .lp{fill:var(--grey-2);font-size:8.5px;letter-spacing:.12em;font-family:var(--mono)}
 .nn .rail .fwd{fill:none;stroke:rgba(68,80,106,.30)}
-.nn .rail .bwd{fill:none;stroke:rgba(199,69,45,.30);stroke-dasharray:4 5}
+.nn .rail .bwd{fill:none;stroke:rgba(30,58,95,.30);stroke-dasharray:4 5}
 .nn .rail .rk{fill:var(--grey-2);font-size:8.5px;letter-spacing:.2em;font-family:var(--mono)}
-.nn .rail .rk.grad{fill:rgba(199,69,45,.62)}
+.nn .rail .rk.grad{fill:rgba(30,58,95,.62)}
 .nn .mth .dim{fill:var(--grey-2);font-size:9px;letter-spacing:.18em}
 /* ── fig 00b · the open problem ──────────────────────────────────────── */
 .openp{margin:clamp(46px,5vw,74px) 0 0;border-top:var(--rule) solid var(--line);padding-top:26px}
@@ -597,7 +597,7 @@ h1.hero-h .thin{color:var(--grey);font-weight:400}
 .opg .tr{fill:none;stroke:var(--bone-dim);stroke-width:1.3}
 .opg .nn{fill:none;stroke:var(--signal);stroke-width:1.3;stroke-dasharray:4 4}
 .opg .axes line{stroke:rgba(25,26,30,.42);stroke-width:1.2}
-.opg .axes.rot line{stroke:rgba(199,69,45,.55)}
+.opg .axes.rot line{stroke:rgba(30,58,95,.55)}
 .opg .arw{fill:none;stroke:rgba(25,26,30,.28)}
 .opg .no{stroke:var(--signal);stroke-width:1.4;opacity:.85}
 .opg .tgt{fill:none;stroke:var(--bone-dim);stroke-width:1.3}
@@ -610,7 +610,7 @@ h1.hero-h .thin{color:var(--grey);font-weight:400}
   border-top:var(--rule) solid var(--line);border-left:var(--rule) solid var(--line)}
 .openp-ev > div{border-right:var(--rule) solid var(--line);border-bottom:var(--rule) solid var(--line);
   padding:18px 20px 22px}
-.openp-ev > div.hi{background:rgba(199,69,45,.06)}
+.openp-ev > div.hi{background:rgba(30,58,95,.06)}
 .openp-ev b{display:block;font-size:clamp(15px,1.25vw,19px);font-weight:400;color:var(--bone);
   margin-bottom:12px;line-height:1;letter-spacing:.01em}
 .openp-ev > div.hi b{color:var(--signal)}
@@ -627,7 +627,7 @@ input,button,select,textarea{font:inherit;color:inherit}
 .nn-foot em{font-style:normal;color:var(--bone-dim)}
 @media (prefers-reduced-motion:reduce){.nn .ed line,.nn .nd .n{animation:none}}
 .prog-note{margin:0 0 14px;font-size:var(--body);line-height:1.95;color:var(--grey);columns:2;column-gap:clamp(30px,4vw,64px);
-  border-left:var(--rule) solid rgba(199,69,45,.3);padding-left:18px}
+  border-left:var(--rule) solid rgba(30,58,95,.3);padding-left:18px}
 .prog-note em{font-style:normal;color:var(--bone-dim)}
 .pos p.k{margin-top:18px;color:var(--bone-dim);letter-spacing:.06em;text-transform:uppercase;font-size:var(--stmt)}
 
@@ -787,7 +787,7 @@ input,button,select,textarea{font:inherit;color:inherit}
 .chart .cap{stroke-width:1}
 .chart .fr.better .ci,.chart .fr.better .cap{stroke:rgba(25,26,30,.85)}
 .chart .fr.better .pt{fill:rgba(25,26,30,.95)}
-.chart .fr.worse .ci,.chart .fr.worse .cap{stroke:rgba(199,69,45,.85)}
+.chart .fr.worse .ci,.chart .fr.worse .cap{stroke:rgba(30,58,95,.85)}
 .chart .fr.worse .pt{fill:var(--signal)}
 .chart .fr.ns .ci,.chart .fr.ns .cap{stroke:rgba(25,26,30,.28)}
 .chart .fr.ns .pt{fill:var(--grey)}
@@ -822,7 +822,7 @@ input,button,select,textarea{font:inherit;color:inherit}
 .scene .bldg rect{fill:rgba(25,26,30,.04);stroke:rgba(25,26,30,.30)}
 .scene .bldg line{stroke:rgba(25,26,30,.13)}
 .scene .bldg .mast{stroke:rgba(25,26,30,.34)}
-.scene .bldg .sens{fill:rgba(199,69,45,.22);stroke:rgba(199,69,45,.6)}
+.scene .bldg .sens{fill:rgba(30,58,95,.22);stroke:rgba(30,58,95,.6)}
 .scene .fov{fill:rgba(68,80,106,.035);stroke:rgba(68,80,106,.16)}
 .scene .seq text{fill:var(--grey-2);font-size:8px;letter-spacing:.16em;font-family:var(--mono)}
 .scene .dg-lb.ours{fill:var(--bone-dim)}
@@ -876,13 +876,13 @@ input,button,select,textarea{font:inherit;color:inherit}
 .chart .vl.bad{fill:var(--signal)}
 .chart .vl.dim{fill:var(--grey-2)}
 .chart .pos{fill:rgba(25,26,30,.80)}
-.chart .neg{fill:rgba(199,69,45,.72)}
+.chart .neg{fill:rgba(30,58,95,.72)}
 .chart .nul{fill:var(--grey-2)}
 .chart .hid{fill:#1b1b1f;stroke:rgba(25,26,30,.07)}
 .fig-leg{display:flex;gap:22px;flex-wrap:wrap;margin-top:14px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-2)}
 .fig-leg i{display:inline-block;width:16px;height:7px;margin-right:8px;vertical-align:middle}
 .fig-leg .k-pos{background:rgba(25,26,30,.80)}
-.fig-leg .k-neg{background:rgba(199,69,45,.72)}
+.fig-leg .k-neg{background:rgba(30,58,95,.72)}
 .fig-leg .k-hid{background:#1b1b1f;border:1px solid rgba(25,26,30,.10)}
 
 .verdicts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:0;border-top:var(--rule) solid var(--line);border-left:var(--rule) solid var(--line)}
@@ -890,7 +890,7 @@ input,button,select,textarea{font:inherit;color:inherit}
 .verdicts .vd:hover{background:rgba(25,26,30,.02)}
 .verdicts b{display:block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--bone-dim);font-weight:400;margin-bottom:11px}
 .verdicts span{display:inline-block;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:4px 9px;border:var(--rule) solid var(--line);margin-bottom:12px}
-.verdicts .tag-no{color:var(--signal);border-color:rgba(199,69,45,.34)}
+.verdicts .tag-no{color:var(--signal);border-color:rgba(30,58,95,.34)}
 .verdicts .tag-ok{color:var(--bone);border-color:rgba(25,26,30,.26)}
 .verdicts .tag-ns{color:var(--grey-2)}
 .verdicts p{font-size:var(--body);line-height:1.8;color:var(--grey);margin:0}
@@ -904,7 +904,7 @@ input,button,select,textarea{font:inherit;color:inherit}
 .chart.fnl{max-width:900px}
 .fnl .fb rect{fill:rgba(25,26,30,.025);stroke:rgba(25,26,30,.24)}
 .fnl .fb.side rect{fill:rgba(25,26,30,.015);stroke:rgba(25,26,30,.16)}
-.fnl .fb.out rect{fill:rgba(199,69,45,.07);stroke:rgba(199,69,45,.55)}
+.fnl .fb.out rect{fill:rgba(30,58,95,.07);stroke:rgba(30,58,95,.55)}
 .fnl .l{fill:var(--grey);font-size:8.5px;letter-spacing:.15em;font-family:var(--mono)}
 .fnl .v{fill:var(--bone);font-size:15px;letter-spacing:.04em;font-family:var(--mono)}
 .fnl .fb.out .l{fill:var(--signal)}
@@ -927,7 +927,7 @@ input,button,select,textarea{font:inherit;color:inherit}
 .emb{margin:clamp(30px,3.6vw,46px) 0}
 .chart.embed{max-width:1100px}
 .embed .pan rect{fill:rgba(25,26,30,.015);stroke:rgba(25,26,30,.14)}
-.embed .pan.ours rect{stroke:rgba(199,69,45,.34)}
+.embed .pan.ours rect{stroke:rgba(30,58,95,.34)}
 .embed .pt{fill:var(--bone-dim);font-size:var(--label);letter-spacing:.16em;font-family:var(--mono)}
 .embed .ps{fill:var(--grey-2);font-size:8px;letter-spacing:.16em;font-family:var(--mono)}
 .embed .ps.red{fill:var(--signal)}
@@ -950,7 +950,7 @@ input,button,select,textarea{font:inherit;color:inherit}
   font-size:10.5px;line-height:1.75;color:var(--grey)}
 .cmp td.dim{color:var(--bone-dim);letter-spacing:.1em;text-transform:uppercase;font-size:9.5px;width:22%}
 .cmp td.dim i{display:block;font-style:normal;color:var(--grey-2);margin-top:5px;text-transform:none;letter-spacing:.04em}
-.cmp td.us{background:rgba(199,69,45,.05);padding-left:16px;color:var(--bone-dim)}
+.cmp td.us{background:rgba(30,58,95,.05);padding-left:16px;color:var(--bone-dim)}
 .cmp td.no{position:relative;padding-left:18px}
 .cmp td.no::before{content:"×";position:absolute;left:0;top:13px;color:var(--signal);font-size:11px}
 .cmp td.yes{position:relative;padding-left:18px}
@@ -1008,7 +1008,7 @@ input,button,select,textarea{font:inherit;color:inherit}
 .attr-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:0;margin-top:26px;
   border-top:var(--rule) solid var(--line);border-left:var(--rule) solid var(--line)}
 .attr-row div{border-right:var(--rule) solid var(--line);border-bottom:var(--rule) solid var(--line);padding:22px 24px 26px}
-.attr-row div.hi{background:rgba(199,69,45,.06)}
+.attr-row div.hi{background:rgba(30,58,95,.06)}
 .attr-row b{display:block;font-size:clamp(24px,2vw,32px);color:var(--bone);margin-bottom:14px;line-height:1;
   font-variant-numeric:tabular-nums}
 .attr-row div.hi b{color:var(--signal)}
@@ -1078,7 +1078,7 @@ input,button,select,textarea{font:inherit;color:inherit}
 .diag .bd.ok{fill:rgba(25,26,30,.30)}
 .diag .bd.nul{fill:rgba(25,26,30,.10)}
 .diag .bd.bad,.diag .bd.bad2{fill:var(--signal)}
-.diag .bd.bad2{fill:rgba(199,69,45,.62)}
+.diag .bd.bad2{fill:rgba(30,58,95,.62)}
 .diag .lead path{fill:none;stroke:rgba(25,26,30,.22)}
 .diag .lossrule{stroke:var(--signal);stroke-width:1.4;opacity:.75}
 .diag .dg-loss{fill:var(--signal);font-size:8.5px;letter-spacing:.16em;font-family:var(--mono)}
@@ -1351,9 +1351,9 @@ footer{padding:0 var(--pad) calc(var(--pad) + 46px);position:relative;z-index:10
 .pipe .phr{stroke:rgba(25,26,30,.14)}
 .pipe .pk{fill:var(--grey-2);font-size:8px;letter-spacing:.16em;font-family:var(--mono)}
 .pipe .pnl{fill:rgba(25,26,30,.015);stroke:rgba(25,26,30,.16)}
-.pipe .pnl.out{fill:rgba(199,69,45,.045);stroke:rgba(199,69,45,.4)}
+.pipe .pnl.out{fill:rgba(30,58,95,.045);stroke:rgba(30,58,95,.4)}
 .pipe .gl{fill:rgba(68,80,106,.34)}
-.pipe .gl.hot{fill:rgba(199,69,45,.55)}
+.pipe .gl.hot{fill:rgba(30,58,95,.55)}
 .pipe .gll{fill:none;stroke:rgba(68,80,106,.6);stroke-width:1.2}
 .pipe .gld{fill:rgba(25,26,30,.7)}
 .pipe .emb{fill:rgba(68,80,106,.06);stroke:rgba(68,80,106,.42)}
@@ -1362,15 +1362,15 @@ footer{padding:0 var(--pad) calc(var(--pad) + 46px);position:relative;z-index:10
 .pipe .arw{fill:none;stroke:rgba(25,26,30,.30)}
 .pipe .arw.ice{stroke:rgba(68,80,106,.5)}
 .pipe .arw.big{stroke:rgba(25,26,30,.45);stroke-width:1.6}
-.pipe .arw.sig{stroke:rgba(199,69,45,.65)}
+.pipe .arw.sig{stroke:rgba(30,58,95,.65)}
 .pipe .attn{fill:rgba(68,80,106,.035);stroke:rgba(68,80,106,.26)}
 .pipe .an{fill:rgba(68,80,106,.22);stroke:rgba(68,80,106,.55)}
 .pipe .an.r{fill:rgba(68,80,106,.10);stroke:rgba(68,80,106,.42)}
 .pipe .al{fill:none;stroke:rgba(68,80,106,var(--o));stroke-width:1}
-.pipe .ltm{fill:rgba(199,69,45,.10);stroke:var(--signal);stroke-width:1.3}
+.pipe .ltm{fill:rgba(30,58,95,.10);stroke:var(--signal);stroke-width:1.3}
 .pipe .ltmt{fill:var(--bone);font-size:34px;letter-spacing:.1em;font-family:var(--mono)}
 .pipe .ltmk{fill:var(--grey);font-size:8px;letter-spacing:.16em;font-family:var(--mono)}
-.pipe .ltmd{fill:rgba(199,69,45,.85)}
+.pipe .ltmd{fill:rgba(30,58,95,.85)}
 .pipe .rd{fill:#1B1B20;stroke:rgba(25,26,30,.09)}
 .pipe .ot{fill:var(--signal);font-size:12px;letter-spacing:.16em;font-family:var(--mono)}
 .pipe .ok{fill:var(--grey);font-size:8.5px;letter-spacing:.14em;font-family:var(--mono)}
@@ -1427,7 +1427,7 @@ to{stroke-dashoffset:-4}}
 .artifact-mark small{display:block;margin-top:13px;font-size:9px;line-height:1.5;letter-spacing:.18em;text-transform:uppercase;color:var(--signal)}
 .artifact.signal{height:clamp(480px,72vw,840px);margin:0}
 .artifact.signal .art-svg{opacity:.92}
-.artifact.signal::before{content:"";position:absolute;z-index:3;inset:20% 12% 16% 54%;border-top:1px solid rgba(199,69,45,.48);border-right:1px solid rgba(199,69,45,.48);opacity:.65;pointer-events:none}
+.artifact.signal::before{content:"";position:absolute;z-index:3;inset:20% 12% 16% 54%;border-top:1px solid rgba(30,58,95,.48);border-right:1px solid rgba(30,58,95,.48);opacity:.65;pointer-events:none}
 .artifact-split{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(290px,.55fr);min-height:clamp(480px,58vw,720px);border-top:var(--rule) solid var(--line);border-bottom:var(--rule) solid var(--line);background:#EFEDE6}
 .artifact-split .artifact{border:0;min-height:100%}
 .artifact-split .artifact::after{background:linear-gradient(90deg,transparent 55%,rgba(245,243,238,.58)),repeating-linear-gradient(0deg,rgba(25,26,30,.015) 0 1px,transparent 1px 4px)}
@@ -1513,8 +1513,8 @@ to{stroke-dashoffset:-4}}
 }
 @media(max-width:700px){.tensor-plate{touch-action:none;will-change:transform;transform-style:preserve-3d;width:62vw}}
 
-.chart .qhi{fill:rgba(199,69,45,.05);stroke:none}
-.chart .qlb{fill:rgba(199,69,45,.72);font-size:8.5px;letter-spacing:.2em;font-family:var(--mono)}
+.chart .qhi{fill:rgba(30,58,95,.05);stroke:none}
+.chart .qlb{fill:rgba(30,58,95,.72);font-size:8.5px;letter-spacing:.2em;font-family:var(--mono)}
 .chart .qlb.dim{fill:var(--grey-2)}
 
 /* ── fig 00b: elements added without styling — rects defaulted to black fill
@@ -1528,12 +1528,12 @@ to{stroke-dashoffset:-4}}
 .opg .cliff{stroke:rgba(25,26,30,.10);stroke-width:1}
 .opg .gr{stroke:rgba(25,26,30,.09);stroke-width:1}
 .opg .cal{stroke:rgba(25,26,30,.18);stroke-width:1}
-.opg .gap{fill:rgba(199,69,45,.10);stroke:none}
+.opg .gap{fill:rgba(30,58,95,.10);stroke:none}
 .opg .gap-l{fill:var(--signal)}
 .opg .mk{stroke:none}
 .opg .mk.tr-m{fill:var(--bone-dim)}
 .opg .mk.nn-m{fill:var(--signal)}
-.opg .res{fill:rgba(199,69,45,.55);stroke:none}
+.opg .res{fill:rgba(30,58,95,.55);stroke:none}
 
 .snd{background:none;border:var(--rule) solid var(--line);color:var(--grey-2);
   font-family:var(--mono);font-size:8px;letter-spacing:.18em;padding:4px 8px;
@@ -1560,7 +1560,7 @@ section{padding:clamp(44px,6vw,84px) 0}
 .mod4 b{font-weight:400;font-size:clamp(15px,1.6vw,20px);color:var(--bone)}
 .mod4 span{font-size:11.5px;color:var(--grey);letter-spacing:.04em}
 .mod4 i{font-style:normal;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-2);margin-top:auto}
-.mod4 .us{background:rgba(199,69,45,.055)}
+.mod4 .us{background:rgba(30,58,95,.055)}
 .mod4 .us i{color:var(--signal)}
 .mod4 .us .tag{font-style:normal;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal)}
 .progrows{margin-top:clamp(20px,2.6vw,34px);border-top:var(--rule) solid var(--line)}
@@ -1609,8 +1609,10 @@ section{padding:clamp(44px,6vw,84px) 0}
 @media(max-width:560px){.kit{flex-direction:column}.kit input{border-right:var(--rule) solid var(--line)}}
 
 /* plate sits inside the summary card — lower, clear of the top rule */
-.card .artifact.mark{margin:clamp(26px,4vw,58px) 0 0;align-self:end;justify-self:center}
-.card .tensor-plate{width:min(30vw,300px);opacity:1}
+.card .artifact.mark{margin:0 0 clamp(20px,3vw,44px);align-self:center;justify-self:center}
+.card .tensor-plate{width:min(30vw,300px);opacity:1;
+  transition:filter .5s var(--ease)}
+.card .artifact.mark:hover .tensor-plate{filter:drop-shadow(0 10px 26px rgba(30,58,95,.18))}
 @media(max-width:820px){.card .tensor-plate{width:56vw}}
 
 /* ChatGPT/Claude vs Tensorfy — two columns, five rows, investor-legible */
@@ -1647,12 +1649,16 @@ p, blockquote, li, .card .big, .card .one, h1, h2, h3, h4, h5,
 
 /* the identity is the loudest thing on the page */
 #hero .hero-h{font-family:var(--serif);font-weight:400;
-  font-size:clamp(38px,7.4vw,104px);line-height:1.02;letter-spacing:-.022em;
-  color:var(--bone);margin:clamp(18px,2.4vw,30px) 0 0;max-width:15ch}
+  font-size:clamp(64px,13.5vw,205px);line-height:.94;letter-spacing:-.03em;
+  color:var(--bone);margin:clamp(16px,2.2vw,28px) 0 0}
 #hero .hero-h .ln{display:block;overflow:hidden}
 #hero .hero-h .ln > i{font-style:normal;display:block}
 #hero .hero-sub{font-family:var(--mono);margin:clamp(16px,2vw,26px) 0 0;
-  font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--grey)}
+  font-size:clamp(13px,1.5vw,21px);letter-spacing:.26em;text-transform:uppercase;
+  color:var(--grey);line-height:1.3}
+
+.map .mg line{stroke:rgba(25,26,30,.055);stroke-width:1}
+.map .mg line.maj{stroke:rgba(25,26,30,.13)}
 </style>
 </head>
 
@@ -1713,10 +1719,9 @@ p, blockquote, li, .card .big, .card .one, h1, h2, h3, h4, h5,
     </div>
 
     <h1 class="hero-h" id="heroH">
-      <span class="ln"><i>Numerical AI</i></span>
-      <span class="ln"><i>Frontier Lab</i></span>
+      <span class="ln"><i>Tensorfy</i></span>
     </h1>
-    <p class="hero-sub rv">Tensorfy</p>
+    <p class="hero-sub rv">Numerical AI Frontier Lab</p>
 
     <div class="scroll-cue rv"><span class="bar"></span><span>Continue</span></div>
   </div>
@@ -2647,13 +2652,52 @@ p, blockquote, li, .card .big, .card .one, h1, h2, h3, h4, h5,
         <rect class="mf" x="0" y="0" width="720" height="360"/>
 
         <g class="mg">
-          <line x1="60"  y1="0" x2="60"  y2="360"/><line x1="120" y1="0" x2="120" y2="360"/>
-          <line x1="180" y1="0" x2="180" y2="360"/><line x1="240" y1="0" x2="240" y2="360"/>
-          <line x1="300" y1="0" x2="300" y2="360"/><line x1="420" y1="0" x2="420" y2="360"/>
-          <line x1="480" y1="0" x2="480" y2="360"/><line x1="540" y1="0" x2="540" y2="360"/>
-          <line x1="600" y1="0" x2="600" y2="360"/><line x1="660" y1="0" x2="660" y2="360"/>
-          <line x1="0" y1="60"  x2="720" y2="60"/><line x1="0" y1="120" x2="720" y2="120"/>
-          <line x1="0" y1="240" x2="720" y2="240"/><line x1="0" y1="300" x2="720" y2="300"/>
+          <line x1="30" y1="0" x2="30" y2="360"/>
+          <line x1="60" y1="0" x2="60" y2="360"/>
+          <line x1="90" y1="0" x2="90" y2="360"/>
+          <line x1="120" y1="0" x2="120" y2="360"/>
+          <line x1="150" y1="0" x2="150" y2="360"/>
+          <line class="maj" x1="180" y1="0" x2="180" y2="360"/>
+          <line x1="210" y1="0" x2="210" y2="360"/>
+          <line x1="240" y1="0" x2="240" y2="360"/>
+          <line x1="270" y1="0" x2="270" y2="360"/>
+          <line x1="300" y1="0" x2="300" y2="360"/>
+          <line x1="330" y1="0" x2="330" y2="360"/>
+          <line class="maj" x1="360" y1="0" x2="360" y2="360"/>
+          <line x1="390" y1="0" x2="390" y2="360"/>
+          <line x1="420" y1="0" x2="420" y2="360"/>
+          <line x1="450" y1="0" x2="450" y2="360"/>
+          <line x1="480" y1="0" x2="480" y2="360"/>
+          <line x1="510" y1="0" x2="510" y2="360"/>
+          <line class="maj" x1="540" y1="0" x2="540" y2="360"/>
+          <line x1="570" y1="0" x2="570" y2="360"/>
+          <line x1="600" y1="0" x2="600" y2="360"/>
+          <line x1="630" y1="0" x2="630" y2="360"/>
+          <line x1="660" y1="0" x2="660" y2="360"/>
+          <line x1="690" y1="0" x2="690" y2="360"/>
+          <line x1="0" y1="15" x2="720" y2="15"/>
+          <line x1="0" y1="30" x2="720" y2="30"/>
+          <line x1="0" y1="45" x2="720" y2="45"/>
+          <line x1="0" y1="60" x2="720" y2="60"/>
+          <line x1="0" y1="75" x2="720" y2="75"/>
+          <line class="maj" x1="0" y1="90" x2="720" y2="90"/>
+          <line x1="0" y1="105" x2="720" y2="105"/>
+          <line x1="0" y1="120" x2="720" y2="120"/>
+          <line x1="0" y1="135" x2="720" y2="135"/>
+          <line x1="0" y1="150" x2="720" y2="150"/>
+          <line x1="0" y1="165" x2="720" y2="165"/>
+          <line class="maj" x1="0" y1="180" x2="720" y2="180"/>
+          <line x1="0" y1="195" x2="720" y2="195"/>
+          <line x1="0" y1="210" x2="720" y2="210"/>
+          <line x1="0" y1="225" x2="720" y2="225"/>
+          <line x1="0" y1="240" x2="720" y2="240"/>
+          <line x1="0" y1="255" x2="720" y2="255"/>
+          <line class="maj" x1="0" y1="270" x2="720" y2="270"/>
+          <line x1="0" y1="285" x2="720" y2="285"/>
+          <line x1="0" y1="300" x2="720" y2="300"/>
+          <line x1="0" y1="315" x2="720" y2="315"/>
+          <line x1="0" y1="330" x2="720" y2="330"/>
+          <line x1="0" y1="345" x2="720" y2="345"/>
         </g>
 
         <g class="land">
@@ -3014,7 +3058,7 @@ function lattice(){
         var qx0=bb[0]-pad, qy0=bb[1]-pad, qx1=bb[2]+pad, qy1=bb[3]+pad;
         var L=Math.max(Math.min(qx1-qx0, qy1-qy0)*0.30, 5);
         var bo=(T<T_ORBIT?0.66:0.66*(1-Math.pow((T-T_ORBIT)/(T_IN-T_ORBIT),2)));
-        ctx.strokeStyle="rgba(199,69,45,"+bo.toFixed(3)+")"; ctx.lineWidth=1;
+        ctx.strokeStyle="rgba(30,58,95,"+bo.toFixed(3)+")"; ctx.lineWidth=1;
         ctx.beginPath();
         ctx.moveTo(qx0,qy0+L); ctx.lineTo(qx0,qy0); ctx.lineTo(qx0+L,qy0);
         ctx.moveTo(qx1-L,qy0); ctx.lineTo(qx1,qy0); ctx.lineTo(qx1,qy0+L);
@@ -3586,6 +3630,7 @@ function clicks(){
 function plate(){
   var img = $(".tensor-plate"); if(!img) return;
   var ry = -14, rx = 6, vel = 0.16, drag = false, lastX = 0, lastT = 0, raf = 0;
+  var trx = 6, tvel = 0.16;   // hover targets
 
   function paint(){
     img.style.transform = "perspective(1300px) rotateX(" + rx.toFixed(2) + "deg) rotateY(" + ry.toFixed(2) + "deg)";
@@ -3596,13 +3641,26 @@ function plate(){
     raf = requestAnimationFrame(frame);
     if(!drag){
       ry += vel;
-      vel += (0.16 - vel) * 0.02;            // ease back to the idle drift speed
-      rx += (6 - rx) * 0.03;                 // and back to the resting tilt
+      vel += (tvel - vel) * 0.05;            // ease toward the current target speed
+      rx  += (trx - rx)  * 0.06;             // and the current target tilt
     }
     if(ry >  180) ry -= 360;
     if(ry < -180) ry += 360;
     paint();
   }
+
+  // hover tilts it toward the cursor and leans into the spin — no drag required
+  var hov = false;
+  img.addEventListener("pointerenter", function(){ hov = true; });
+  img.addEventListener("pointermove", function(e){
+    if(drag || !hov) return;
+    var b = img.getBoundingClientRect();
+    var nx = (e.clientX - b.left) / b.width  - 0.5;   // -0.5 … 0.5
+    var ny = (e.clientY - b.top)  / b.height - 0.5;
+    trx = -ny * 26;                                    // tilt toward the pointer
+    tvel = 0.16 + nx * 1.5;                            // lean the spin with it
+  });
+  img.addEventListener("pointerleave", function(){ hov = false; trx = 6; tvel = 0.16; });
 
   img.addEventListener("pointerdown", function(e){
     drag = true; lastX = e.clientX; lastT = e.clientY;
