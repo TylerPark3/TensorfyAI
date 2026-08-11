@@ -1603,6 +1603,22 @@ section{padding:clamp(44px,6vw,84px) 0}
 .card .artifact.mark{margin:clamp(26px,4vw,58px) 0 0;align-self:end;justify-self:center}
 .card .tensor-plate{width:min(30vw,300px);opacity:1}
 @media(max-width:820px){.card .tensor-plate{width:56vw}}
+
+/* ChatGPT/Claude vs Tensorfy — two columns, five rows, investor-legible */
+.vs{margin-top:clamp(22px,3vw,36px);border-top:var(--rule) solid var(--line)}
+.vs-h,.vs-r{display:grid;grid-template-columns:minmax(110px,1fr) minmax(0,1.4fr) minmax(0,1.4fr);
+  gap:clamp(12px,2.5vw,34px);align-items:baseline;padding:14px 2px;
+  border-bottom:var(--rule) solid var(--line)}
+.vs-h{padding-top:16px}
+.vs-h b{font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
+.vs-h b.us{color:var(--signal)}
+.vs-r span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--grey-2)}
+.vs-r i{font-style:normal;font-size:var(--body);color:var(--grey)}
+.vs-r i.us{color:var(--bone)}
+@media(max-width:700px){
+  .vs-h,.vs-r{grid-template-columns:1fr 1fr;gap:8px 16px}
+  .vs-h span,.vs-r span{grid-column:1/-1;margin-bottom:2px}
+}
 </style>
 </head>
 
@@ -1691,6 +1707,19 @@ section{padding:clamp(44px,6vw,84px) 0}
       <p class="huge">~90%</p>
       <h2 class="big">of AI startups are wrappers. <em>We are not.</em></h2>
       <p class="one">Transformer-based neural networks, built in-house.</p>
+    </div>
+
+    <div class="card rv">
+      <h2 class="big">A language model and a numerical model are not the same instrument.</h2>
+      <div class="vs">
+        <div class="vs-h"><span></span><b>ChatGPT &middot; Claude</b><b class="us">Tensorfy</b></div>
+        <div class="vs-r"><span>Built for</span><i>Language</i><i class="us">Numbers</i></div>
+        <div class="vs-r"><span>Input</span><i>Text</i><i class="us">Numerical data</i></div>
+        <div class="vs-r"><span>Output</span><i>Non-deterministic</i><i class="us">Deterministic</i></div>
+        <div class="vs-r"><span>Trained on</span><i>The public web</i><i class="us">Institutional data</i></div>
+        <div class="vs-r"><span>Runs</span><i>Public API</i><i class="us">Inside the institution</i></div>
+      </div>
+      <p class="one">Institutional data is private and mostly numerical. <em>It was never on the web to train on.</em></p>
     </div>
 
     <div class="card rv split">
