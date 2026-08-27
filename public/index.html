@@ -1663,6 +1663,23 @@ p, blockquote, li, .card .big, .card .one, h1, h2, h3, h4, h5,
 .mod4 .cap{font-style:normal;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
   color:var(--grey-2);margin-top:2px;font-family:var(--mono)}
 .mod4 .us .tag{margin-top:2px}
+
+/* the record — hard numbers, ranked left to right */
+.card.rec{padding-top:clamp(20px,2.6vw,32px);padding-bottom:clamp(20px,2.6vw,32px)}
+.recrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0}
+.recrow>div{padding:6px 20px 6px 0}
+.recrow b{display:block;font-family:var(--serif);font-weight:400;
+  font-size:clamp(24px,2.7vw,38px);line-height:1;color:var(--bone);margin-bottom:9px;letter-spacing:-.015em}
+.recrow span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;line-height:1.65;color:var(--grey)}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;margin-top:24px;
+  border-top:var(--rule) solid var(--line);padding-top:20px}
+.pair>div{padding-right:20px}
+.pair b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(21px,2.3vw,32px);
+  line-height:1;color:var(--bone);margin-bottom:8px}
+.pair span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--grey)}
+.pair .hi b{color:var(--signal)}
 </style>
 </head>
 
@@ -1757,6 +1774,11 @@ p, blockquote, li, .card .big, .card .one, h1, h2, h3, h4, h5,
       <p class="huge">~90%</p>
       <h2 class="big">of AI startups are wrappers. <em>We are not.</em></h2>
       <p class="one">Transformer-based neural networks, built in-house.</p>
+      <div class="pair wide">
+        <div><b>2,000</b><span>LLM experts worldwide</span></div>
+        <div><b>28M</b><span>Software engineers worldwide</span></div>
+        <div class="hi"><b>1 in 14,000</b><span>The bench is the constraint</span></div>
+      </div>
     </div>
 
     <div class="card rv">
@@ -1772,10 +1794,24 @@ p, blockquote, li, .card .big, .card .one, h1, h2, h3, h4, h5,
       <p class="one">Institutional data is private and mostly numerical. <em>It was never on the web to train on.</em></p>
     </div>
 
+    <div class="card rv rec">
+      <div class="recrow">
+        <div><b>$5.0M</b><span>Pre-seed, closed</span></div>
+        <div><b>None</b><span>Institutional capital, by choice</span></div>
+        <div><b>$30M</b><span>ARR built, on revenue</span></div>
+        <div><b>20&times;</b><span>Smaller than a MAC block &middot; 70 TOPS/W at 7nm</span></div>
+        <div><b>8</b><span>Engineering sites, 3 regions</span></div>
+      </div>
+    </div>
+
     <div class="card rv split">
       <div>
         <h2 class="big">Institutions emit numbers continuously.<br><em>There is no good way to process them.</em></h2>
         <p class="one">What exists is inefficient because it is inaccurate. <em>This is who we are.</em></p>
+        <div class="pair">
+          <div><b>80 ZB</b><span>Enterprise data</span></div>
+          <div><b>2 PB</b><span>The entire public web</span></div>
+        </div>
       </div>
       <figure class="artifact mark rv" aria-label="Plotted nested tensor lattice">
   <img class="tensor-plate" src="assets/tensor.png" width="900" height="843" loading="lazy" alt="Plotter-drawn nested lattice: a dense tensor block resolving to a solid core">
