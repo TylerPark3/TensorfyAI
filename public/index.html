@@ -1680,6 +1680,32 @@ p, blockquote, li, .card .big, .card .one, h1, h2, h3, h4, h5,
 .pair span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
   text-transform:uppercase;color:var(--grey)}
 .pair .hi b{color:var(--signal)}
+
+/* engagements — secured is a closed mark, in-progress turns */
+.eng-list{margin-top:clamp(20px,2.6vw,32px);border-top:var(--rule) solid var(--line)}
+.eng-list>div{display:flex;align-items:center;gap:16px;padding:15px 2px;
+  border-bottom:var(--rule) solid var(--line)}
+.eng-list .mk{flex:0 0 16px;height:16px;display:block}
+.eng-list b{font-family:var(--serif);font-weight:400;font-size:calc(var(--body) + 2px);
+  color:var(--bone);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.eng-list .redact{padding:1px 7px;font-size:11px}
+.eng-list i{font-style:normal;margin-left:auto;padding-left:14px;white-space:nowrap;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--grey-2)}
+.eng-list .done i{color:var(--signal)}
+.eng-list .done b{color:var(--bone)}
+svg.sq{width:16px;height:16px}
+svg.sq rect{fill:none;stroke:var(--signal);stroke-width:1.3}
+svg.sq path{fill:none;stroke:var(--signal);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+svg.ld{width:16px;height:16px}
+svg.ld .tr{fill:none;stroke:var(--line);stroke-width:1.3}
+svg.ld .ar{fill:none;stroke:var(--grey);stroke-width:1.5;stroke-linecap:round;
+  transform-origin:8px 8px;animation:ldspin 1.5s linear infinite}
+@keyframes ldspin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){svg.ld .ar{animation:none}}
+
+.eng-list u{text-decoration:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--grey);padding-left:16px;white-space:nowrap}
+@media(max-width:640px){.eng-list u{display:none}}
 </style>
 </head>
 
@@ -2678,6 +2704,17 @@ p, blockquote, li, .card .big, .card .one, h1, h2, h3, h4, h5,
         </svg>
       <p class="one dim">The variables are withheld. <em>The architecture is not the product &mdash; the representation is.</em></p>
     </figure>
+
+    <div class="card rv">
+      <h2 class="big">Engagements</h2>
+      <div class="eng-list">
+        <div class="done"><span class="mk"><svg class="sq" viewBox="0 0 16 16" aria-hidden="true"><rect x="3.5" y="3.5" width="9" height="9"/><path d="M5.6 8.2 L7.3 9.9 L10.6 6.2"/></svg></span><b>Cashew</b><u>Middle East</u><i>Secured</i></div>
+        <div><span class="mk"><svg class="ld" viewBox="0 0 16 16" aria-hidden="true"><circle class="tr" cx="8" cy="8" r="6"/><path class="ar" d="M8 2 a6 6 0 0 1 6 6"/></svg></span><b>South Korea</b><u>Asia</u><i>In progress</i></div>
+        <div><span class="mk"><svg class="ld" viewBox="0 0 16 16" aria-hidden="true"><circle class="tr" cx="8" cy="8" r="6"/><path class="ar" d="M8 2 a6 6 0 0 1 6 6"/></svg></span><b>Japan</b><u>Asia</u><i>In progress</i></div>
+        <div><span class="mk"><svg class="ld" viewBox="0 0 16 16" aria-hidden="true"><circle class="tr" cx="8" cy="8" r="6"/><path class="ar" d="M8 2 a6 6 0 0 1 6 6"/></svg></span><b>United States</b><u>North America</u><i>In progress</i></div>
+        <div><span class="mk"><svg class="ld" viewBox="0 0 16 16" aria-hidden="true"><circle class="tr" cx="8" cy="8" r="6"/><path class="ar" d="M8 2 a6 6 0 0 1 6 6"/></svg></span><b><span class="redact" data-glyph="██████████" data-alt="Withheld">██████████</span></b><u>&mdash;</u><i>In progress</i></div>
+      </div>
+    </div>
 
     <div class="progrows rv">
       <div><span>P&mdash;01</span><b>Numerical intelligence &mdash; institutions</b><i class="act">Active</i></div>
