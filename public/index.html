@@ -1675,7 +1675,11 @@ p, blockquote, li, .card .big, .card .one, h1, h2, h3, h4, h5,
 .fp-list,.fp-cap,.kit-note,.redact,.foot-bar,.foot-bar *,.hero-eyebrow,.geo,.geo *,
 .fig-h,.fig-n,.cite,text,tspan{font-family:var(--mono)}
 .mod4 b,.plist b{font-family:var(--serif)}
-.card .huge{font-family:var(--serif);font-weight:600;letter-spacing:-.02em}
+.card .huge{font-family:var(--serif);font-weight:400;letter-spacing:-.03em;line-height:.94}
+.card .big.wide{max-width:none}
+@media(min-width:720px){.card .big .nowrap{white-space:nowrap}}
+/* wordmark matches the hero TENSORFY: Libertinus Serif, regular, caps */
+.logo .wordmark{font-family:var(--serif);font-size:19px;letter-spacing:.02em;padding-top:3px}
 
 /* the identity is the loudest thing on the page */
 #hero .hero-h{font-family:var(--serif);font-weight:400;
@@ -1816,10 +1820,8 @@ svg.ld .ar{fill:none;stroke:var(--grey);stroke-width:1.5;stroke-linecap:round;
     <div class="sec-head" aria-hidden="true"></div>
 
     <div class="card rv">
-      <h2 class="big">We are numerical.<br>
-        <em>The most market, the least competition.</em></h2>
-      <p class="one">Capital went where the problem was already solved.
-        <em>We will specialize in numbers.</em></p>
+      <h2 class="big wide">We are numerical.<br>
+        <em class="nowrap">The most market, the least competition.</em></h2>
       <div class="mod4">
         <div><b>Audio</b><span>speech &rarr; text</span><span>1990s</span>
           <i>neural networks</i><em class="cap">Solved</em></div>
