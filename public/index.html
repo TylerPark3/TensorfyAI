@@ -292,14 +292,14 @@ nav.hud-nav a:hover::after{transform:scaleX(1);transform-origin:left}
 main{position:relative;z-index:10}
 /* sparse figures in the margins of the page: this is a company about numbers */
 #nums{position:absolute;left:0;right:0;top:100svh;bottom:0;pointer-events:none;z-index:0;overflow:hidden}
-#nums span{position:absolute;font-family:var(--serif);font-size:clamp(13px,1.05vw,16px);letter-spacing:.02em;
+#nums span{position:absolute;font-family:var(--serif);font-size:clamp(16px,1.45vw,21px);letter-spacing:.02em;
   font-variant-numeric:oldstyle-nums proportional-nums;font-feature-settings:"onum" 1,"pnum" 1;
   color:var(--grey-2);opacity:0;transition:opacity 2.4s var(--ease);white-space:nowrap}
 #nums span.it{font-style:italic}
 #nums span.in{opacity:.85}
 #nums span.eq{font-style:italic;letter-spacing:.01em}
 /* large, barely-there equations behind the sections */
-#nums span.wm{font-style:italic;font-size:clamp(46px,6.4vw,112px);letter-spacing:-.01em;color:var(--bone);transition:opacity 3s var(--ease)}
+#nums span.wm{font-style:italic;font-size:clamp(44px,5.4vw,80px);letter-spacing:-.01em;color:var(--bone);transition:opacity 3s var(--ease)}
 #nums span.wm.in{opacity:.05}
 
 section{position:relative;padding:0 var(--pad)}
@@ -3875,7 +3875,6 @@ function figures(){
       if(g % 3 === 2 && wms.length){                // a watermark fills this band
         var w = document.createElement("span");
         w.className = "wm"; w.textContent = pick(wms); box.appendChild(w);
-        w.style.fontSize = Math.round(Math.min(parseFloat(getComputedStyle(w).fontSize), h*0.62)) + "px";
         w.style.left = Math.round(Math.max(0, (W - w.offsetWidth) * (0.05 + Math.random()*0.9))) + "px";
         w.style.top = Math.round(y0 + (h - w.offsetHeight)/2) + "px";
         spans.push(w); continue;
